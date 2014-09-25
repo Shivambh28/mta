@@ -16,24 +16,22 @@ $(function() {
 						$length = $data.length,
 						$yourStop = $data[0].MonitoredVehicleJourney.MonitoredCall.StopPointName,
 						$falseStop = response.Siri.ServiceDelivery.StopMonitoringDelivery[0].ErrorCondition;
-
-
-					//console.log($yourStop);	
-					for(var i = 0; i < $length; i++) {
+                    
+                    for(var i = 0; i < $length; i++) {
 						var $res = $data[i],
 							$d = $res.MonitoredVehicleJourney.MonitoredCall.Extensions.Distances,
 							$busName = $res.MonitoredVehicleJourney.PublishedLineName,
 							$distance = $d.PresentableDistance,
 							$stopsAway = $d.StopsFromCall;
-						
+						    	
 							var elements = {
 								openTr : '<tr>',
 								closeTr : '</tr>',
 								openTd : '<td>',
 								closeTd : '</td>'
 							}
-
-							var html = elements.openTr + 
+                           
+							var $html = elements.openTr + 
 									   	elements.openTd + 
 										 $busName + 
 										elements.closeTd + 
@@ -46,8 +44,8 @@ $(function() {
 										 $stopsAway + 
 										elements.closeTd + 
 									   elements.closeTr;
-						$('#results tr').remove();
-						$('#results').append(html);
+                        
+						$('#results').append($html);
 					}
 				} else {
 					alert('Bus Stop Does Not Exist');
