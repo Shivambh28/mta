@@ -16,7 +16,7 @@ $(function() {
 						$length = $data.length,
 						$yourStop = $data[0].MonitoredVehicleJourney.MonitoredCall.StopPointName,
 						$falseStop = response.Siri.ServiceDelivery.StopMonitoringDelivery[0].ErrorCondition;
-                    
+                    $('.place').text($yourStop).parent().parent().show();
                     for(var i = 0; i < $length; i++) {
 						var $res = $data[i],
 							$d = $res.MonitoredVehicleJourney.MonitoredCall.Extensions.Distances,
