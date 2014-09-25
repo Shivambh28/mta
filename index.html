@@ -19,6 +19,15 @@
 		border-bottom:1px solid #ccc;
 		padding-bottom: 10px;
 	}
+	.footer {
+		position: absolute;
+		bottom:0;
+		border-top: 1px solid #ccc;
+		padding: 20px 0;
+	}
+	.footer .col-md-3 {
+		text-align: right;
+	}
 	</style>
 </head>
 <body>
@@ -26,7 +35,6 @@
 	<div class="row header">
 		<div class="col-md-9">
 			<h1>bus buzz <small>how fars your bus?</small></h1>
-			<a href="sms:9177753380?body=hello">Tap to say hello!</a>
 		</div>
 		<div class="col-md-3">
 			<form action="#" id="busSearch" class="form-inline" role="form">
@@ -35,19 +43,29 @@
 			</form>
 		</div>
 	</div>
-
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Bus #</th>
-				<th>Distance</th>
-				<th>Stops Away</th>
-			</tr>
-		</thead>
-		<tbody id="results">
-			
-		</tbody>
-	</table>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Bus #</th>
+					<th>Distance</th>
+					<th>Stops Away</th>
+				</tr>
+			</thead>
+			<tbody id="results">
+				
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="row footer container">
+		<div class="col-md-9">
+			<small>Built Using MTA API</small>
+		</div>
+		<div class="col-md-3">
+			<small>&copy; Shivam Bhalla 2014</small>
+		</div>
+	</div>
 
 </div>
 	
