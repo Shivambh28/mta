@@ -4,22 +4,58 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>MTA</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+	.container {
+		margin-top:20px;
+	}
+	form {
+		margin-top: 25px;
+	}
+	table {
+		margin-top: 60px;
+	}
+	.header {
+		border-bottom:1px solid #ccc;
+		padding-bottom: 10px;
+	}
+	</style>
 </head>
 <body>
+<div class="container">
+	<div class="row header">
+		<div class="col-md-9">
+			<h1>bus buzz <small>how fars your bus?</small></h1>
+			<a href="sms:9177753380?body=hello">Tap to say hello!</a>
+		</div>
+		<div class="col-md-3">
+			<form action="#" id="busSearch" class="form-inline" role="form">
+				<input type="text" class="form-control stopNum" placeholder="type bus stop #">
+				<input type="submit" value="buzz!" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Bus #</th>
+				<th>Distance</th>
+				<th>Stops Away</th>
+			</tr>
+		</thead>
+		<tbody id="results">
+			
+		</tbody>
+	</table>
+
+</div>
+	
+
+
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script>
-	$(function() {
-		var key = '8322baf0-b5c8-4838-a798-1af726abd6da',
-			data = '&OperatorRef=MTA&MonitoringRef=308562',
-			url = 'http://bustime.mta.info/api/siri/stop-monitoring.json?key=' + key + data;
-
-		$.getJSON(url, function(res) {
-			document.write(res);
-		});
-	});
-	
-	</script>
+	<script src="js/handlebars-v2.0.0.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
