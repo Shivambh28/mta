@@ -11,8 +11,9 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script>
 	$(function() {
-		var key = '41e5115309e4b6d4876a2a2ad778a03e',
-			url = 'http://datamine.mta.info/mta_esi.php?key=' + key;
+		var key = '8322baf0-b5c8-4838-a798-1af726abd6da',
+			data = '&OperatorRef=MTA&MonitoringRef=308562',
+			url = 'http://bustime.mta.info/api/siri/stop-monitoring.json?key=' + key + data;
 
 		$.getJSON(url, function(res) {
 			document.write(res);
